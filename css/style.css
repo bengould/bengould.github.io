@@ -17,14 +17,14 @@
 
 	body, input, select, textarea {
 		color: #555f66;
-		font-family: "Roboto", Helvetica, sans-serif;
+		font-family: "Roboto", "Source Sans", sans-serif;
 		font-size: 14pt;
 		font-weight: 300;
 		line-height: 1.75em;
 	}
 
 	a {
-		color: #0064a3;
+		color: #3fa9f5;
 		text-decoration: underline;
 	}
 
@@ -244,8 +244,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #0064a3;
-			box-shadow: 0 0 0 1px #0064a3;
+			border-color: #004f84;
+			box-shadow: 0 0 0 1px #004f84;
 		}
 
 	.select-wrapper {
@@ -356,8 +356,8 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #0064a3;
-			box-shadow: 0 0 0 1px #0064a3;
+			border-color: #004f84;
+			box-shadow: 0 0 0 1px #004f84;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -439,7 +439,7 @@
 			display: inline-block;
 			margin: 0 0 1.25em 0;
 			color: #ffffff;
-			background: #0064a3; /* original 629DD1 */
+			background: #004f84; /* original 629DD1 */
 			width: 3em;
 			height: 3em;
 			font-size: 2em;
@@ -447,6 +447,22 @@
 			line-height: 3em;
 			border-radius: 100%;
 			box-shadow: 0 0 0 10px #fff, 0 0 0 11px rgba(144, 144, 144, 0.25);
+		}
+        
+        /* mega icon */
+        .icon.mega {
+			display: inline-block;
+			margin: 0 0 1.25em 0;
+			color: #ffffff;
+			background: #004f84; /* original 629DD1 */
+			width: 5em;
+			height: 5em;
+			font-size: 2em;
+			text-align: center;
+			line-height: 3em;
+			border-radius: 100%;
+			box-shadow: 0 0 0 8px #fff, 0 0 0 10px rgba(144, 144, 144, 0.25);
+            left: 25%;
 		}
 
 /* Image */
@@ -803,7 +819,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #0063a3;
+			background-color: #3fa9f5;
 			color: #ffffff !important;
 		}
 
@@ -847,7 +863,7 @@
 		}
 
 		.wrapper.style2 {
-			background: #192024;
+			background: #555f66; /*original 192024*/
 			color: #c5c7c8;
 		}
 
@@ -946,7 +962,7 @@
 					}
 
 						#header nav > ul > li a:hover {
-							color: #0064a3;
+							color: #004f84;
 						}
 
 					#header nav > ul > li:first-child {
