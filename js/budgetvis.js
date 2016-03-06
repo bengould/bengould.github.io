@@ -81,13 +81,13 @@ function vis (data, w, h) {
       .style("stroke", function(d) {
             switch (d.target.name) {
                 case "General Fund":
-                    return "#276419";
+                    return "green";
                     break;
                 case "Restricted Funds":
-                    return '#4db029';
+                    return 'lightgreen';
                     break;
                 default: 
-                    return "#FFC107";
+                    return "#008CE7";
                     break;
             }})
       .sort(function(a, b) { return b.dy - a.dy; })
@@ -139,13 +139,13 @@ function vis (data, w, h) {
       .style("fill", function(d) {
             switch (d.name) {
                 case "General Fund":
-                    d.color = "#276419";
+                    d.color = "green";
                     break;
                 case "Restricted Funds":
-                    d.color = '#4db029';
+                    d.color = 'lightgreen';
                     break;
                 default: 
-                    d.color = "#FFC107";
+                    d.color = "palegoldenrod";
                     break;
             }
         return d.color;

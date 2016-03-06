@@ -23,7 +23,7 @@
         
         <style>
         svg text {
-            font-family: "Roboto", "Source Sans", sans-serif;
+            font-family: "Open Sans", sans-serif;
             font-size: 14px;
             font-weight: 800;
         }
@@ -35,7 +35,7 @@
         .node text {
           pointer-events: none;
           /*text-shadow: 0 1px 0 #fff;*/
-          font-family: "Roboto", "Source Sans", sans-serif;
+          font-family: "Open Sans", sans-serif;
           font-size: 13px;
           font-weight: 200;
         }
@@ -107,12 +107,11 @@
 							<section>
 								<h2>Interactive Visualization</h2>
 								<div id="chart">
-                                    
-                                    <div id="hover_description"></div>
-                                </div>
+                                        <b><div id="hover_description"></div></b>
+                                    </div>
 							</section>
 						</div>
-						<div class="4u">
+						<div class="4u" id="sidebar">
 							<section>
 								<h3>Annual Budget</h3>
 								<p>This diagram depicts the flow of money through the City of Berkeley: from sources of revenue (left) through funds (General and Restricted) into departmental expenses (right).</p>
@@ -190,7 +189,8 @@
         <script type="text/javascript">
             var w = $("#chart").width();
             if ($(window).width() < 960) {
-                d3.select("#chart").html("<p>Sorry, to maintain readability, this chart can only be viewed on larger screens!</p>");
+                d3.select("#chart").html('<ul class="actions"><li><i class="icon fa-frown-o"></i></li><li>Unable to display the visualization </li><li>To maintain readability, this chart can only be viewed on larger screens.</li></ul>');
+                d3.select("#sidebar").html('<h3>Return to home</h3><a href="index.html" class="image fit"><i class="icon fa-home major"></i></a>');
             } else {
                 d3.csv("/Budget data/fy2013budget.csv", function(error, data) {
                         vis(data, w, 630);
