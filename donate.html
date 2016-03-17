@@ -51,7 +51,7 @@
 					<section>
 						<h2>Donate</h2>
                         <div id="donation">
-                            <iframe scrolling="no" src="https://bengould.nationbuilder.com/#content" width="800" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                            
                         </div>
                         <div  style="display: none">
                             <a href="#" class="image fit"><img src="images/banner.jpg" alt="" /></a>
@@ -136,6 +136,8 @@
                     var w = $(window).width();
                     if (w < 960) {
                         d3.select("#donation").html('<iframe scrolling="no" src="https://bengould.nationbuilder.com/#content" width="w" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>')
+                    } else {
+                        d3.select("#donation").html('<iframe scrolling="no" src="https://bengould.nationbuilder.com/#content" width="800" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>')
                     }
                 </script>
 			</footer>
