@@ -242,6 +242,13 @@
 	  #sidebar {
 	    display: none;
 	  }
+	}
+
+	@media screen and (min-width: 400px)
+    {  
+	  #sidebar {
+	    display: block;
+	  }
 	}	
 
 	.bulleted li{
@@ -254,7 +261,49 @@
 		text-decoration: underline;
 	}
 
-  
+
+#ranked_steps li {
+  list-style-type:none;
+  padding-bottom: 30px;
+  font-size: 18px;
+}
+
+#ranked_steps i
+{
+    padding: 5px 10px;
+    margin-right: 2%;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 50%;
+    -moz-box-shadow: 0px 0px 2px #888;
+    -webkit-box-shadow: 0px 0px 2px #888;
+    box-shadow: 0px 0px 2px #888;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+#summary_bottom ul 
+{
+	padding-left: 0em;
+}
+
+#summary_bottom ul li 
+{
+	padding-left: 1em;
+}
+
+#add_resources{
+	padding-top:40px;
+}
+
+#add_resources ul{
+	padding-left: 0em;
+}
+
+#add_resources ul li{
+	padding-left: 0em;
+}
 
    
 
