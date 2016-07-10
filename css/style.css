@@ -223,10 +223,16 @@
 		text-decoration: underline;
 	}
 
-	#sidebar{
+	#sidebox{
 		position: fixed;
     	top: 20%;
     	left: 75%;
+
+    }
+
+    #sidebar{
+    	top: 20;
+    	left: 75;
 
     }
 

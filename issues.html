@@ -100,6 +100,7 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="index.html#vision">Meet Ben</a></li>
 						<li><a href="issues.html">Issues</a></li>
+                        <li><a href="voting.html">Voting</a></li>
                         <li><a href="index.html#join">Get Involved</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                         
@@ -153,7 +154,7 @@
 
 
 							</section>
-							<section">
+							<section>
 									<h3>Parks & Public Infrastructure </h3>
 									<p>In 1978, California voters passed Prop 13, which slashed funding for local government and restricted our ability to raise revenues. In spite of those funding restrictions, Berkeley has doubled its parkland over the last 40 years, and currently boasts 247 acres of open space.
 									</p>
@@ -176,14 +177,12 @@
 											<li>Require Net Zero Energy buildings to also be Net Zero Carbon in their day-to-day use. Ban the installation of appliances or systems that rely upon natural gas in new residential or commercial construction.</li>
 											<li>Create a citywide green building standard, comparable to Leadership in Energy and Environmental Design (LEED) requirements.</li>  
 											<li>Develop a Climate Adaptation Plan, building upon recommendations in the Climate Action Plan, to prepare Berkeley for a changing future; including strategies to plan for and mitigate sea level rise, handle increased stormwater runoff in El Niño years, manage extreme heat and increased fire risks, and develop drought resilience.</li>
-											<span id="five">
+											<span id="five"></span>
 											<li>Expand bike sharing throughout the East Bay, and encourage the placement of bike-share stations in commercial areas and near major transit stops.</li>
 											<li>Increase access to and frequency of public transit throughout Berkeley.</li>
-
-										</ul>
-									</p>
+                                </ul>
                             </section>
-                    
+                            <section>
 									<h3>Budget Priorities and Fiscal Responsibility</h3>
 									<p>Effective management of Berkeley’s $430 million annual budget ($159M discretionary, $271M restricted funding) is critical for ensuring the City can provide adequate and effective services. Right now, however, the City lacks resources for many programs, ranging from unfunded pension liabilities to deferred infrastructure maintenance to capital improvements we can’t raise funds to pay for.
 									</p>
@@ -198,27 +197,27 @@
 
 									</ul>
                             </section>
-				</section>
+                        </div>
+                    </div>
+                    </div>
+                </section>
 
 
 						</div>
-						<div class="3u" id="sidebar">
+						<div class="3u" id="sidebox">
 							<h4>Navigate the Issues</h4>
 								<ul id="issue_nav_list">
-									<li> <a href="#two">Housing Affordability</a></li>
-									<li> <a href="#three">Parks & Public Infrastructure</a></li>
-									<li> <a href="#four">Environmental Sustainability</a></li>
-									<li> <a href="#five">Budget Priorities and Fiscal Responsibility</a></li>
+									<li> <a href="#two">1. Housing Affordability</a></li>
+									<li> <a href="#three">2. Parks & Public Infrastructure</a></li>
+									<li> <a href="#four">3. Environmental Sustainability</a></li>
+									<li> <a href="#five">4. Budget Priorities and Fiscal Responsibility</a></li>
 								
 									
 								</ul>
-							</section>
-						
-							
-						</div>
-					</div>
-					
-				</div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
 			</section>
 
 		<!-- Footer -->
@@ -246,31 +245,15 @@
 						<li>Images: <a href="http://unsplash.com">Unsplash</a> and <a href="https://www.flickr.com/photos/parksdh/">Daniel Parks</a></li>
 					</ul>
 				</div>
-			</footer>
-        
-        <script src="js/sankey.js"></script>
-        <script src="js/budgetvis.js"></script>
-        <script type="text/javascript">
-            var w = $("#chart").width();
-            if ($(window).width() < 960) {
-                d3.select("#chart").html('<ul class="actions"><li><i class="icon fa-frown-o"></i></li><li>Unable to display the visualization </li><li>To maintain readability, this chart can only be viewed on larger screens.</li></ul>');
-                d3.select("#sidebar").html('<h3>Return to home</h3><a href="index.html" class="image fit"><i class="icon fa-home major"></i></a>');
-            } else {
-                d3.csv("/Budget data/fy2013budget.csv", function(error, data) {
-                        vis(data, w, 630);
-                    });
-                for (var i = 2013; i < 2018; i++) {
-                    d3.select("#fy").append("option").attr("value", function() {return ("fy" + i);}).text(function() {return ("FY " + i)});
-                }
-                $("#fy").change(function () {
-                    d3.csv("/Budget data/" + fy.value + "budget.csv", function(error, data) {
-                        d3.select(".sankeyChart").remove();
-                        vis(data, w, 630);
-                    });
-
-                });
-            }
-        </script>
-
+                <script type="text/javascript">
+                var w = $("#chart").width();
+                if ($(window).width() < 960) {
+                    d3.select("#sidebox").html('');
+                }  /*
+                if ($(window).width() > 960) {
+                    d3.select("#sidebox").html('<h4>Navigate the Issues</h4><ul id="issue_nav_list"><li> <a href="#two">1. Housing Affordability</a></li><li> <a href="#three">2. Parks & Public Infrastructure</a></li><li> <a href="#four">3. Environmental Sustainability</a></li><li> <a href="#five">4. Budget Priorities and Fiscal Responsibility</a></li></ul>')
+                }*/
+            </script>
+        </footer>
 	</body>
 </html>
