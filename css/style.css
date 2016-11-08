@@ -1019,6 +1019,12 @@
 		padding-top: 3em;
 	}
 
+    .logo {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        margin-left: 1.25em;
+    }
+
 	#header {
 		background: #fff;
 		color: #555f66;
