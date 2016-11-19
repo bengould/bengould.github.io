@@ -1125,7 +1125,7 @@
 
 	#banner {
 		background-color: #666666;
-		background-image: url("../images/Berkeley.jpg");
+		background-image: url("../images/Berkeley-Night.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -1180,7 +1180,7 @@
 		}
 
 		#banner h2 {
-			font-size: 3.5em;
+			font-size: 3em;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
