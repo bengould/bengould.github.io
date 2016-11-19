@@ -1023,6 +1023,8 @@
         margin-top: 0.3em;
         margin-bottom: 0.3em;
         margin-left: 1.25em;
+        width: 85%;
+        height: auto;
     }
 
 	#header {

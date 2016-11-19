@@ -22,6 +22,7 @@
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
         
+        
         <!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -39,43 +40,108 @@
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<a href="http://www.bengould.org"><img src="images/logo_v3_trim.png" class="logo" height=65em></a>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index.html#vision">Meet Ben</a></li>
-						<li><a href="issues.html">Issues</a></li>
-                        <li><a href="voting.html">Voting</a></li>
-                        <li><a href="endorse.html">Endorsements</a></li>
-                        <li><a href="index.html#join">Get Involved</a></li>
-                        <li><a href="donate.html" class="button special">Donate</a></li>
-					</ul>
-				</nav>
+				<div class="row">
+                    <div class="3u">
+                        <a href="http://www.bengould.org">
+                            <img src="images/logo_council.png" class="logo">
+                        </a>
+                    </div>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#vision">Meet Ben</a></li>
+                            <li><a href="issues.html">Issues</a></li>
+                            <li><a href="voting.html">Voting</a></li>
+                            <li><a href="endorse.html">Endorsements</a></li>
+                            <li><a href="index.html#join">Get Involved</a></li>                        
+                            <li><a href="donate.html" class="button special">Donate</a></li>
+                        </ul>
+                    </nav>
+                </div>
 			</header>
 
 		<!-- Main -->
 			<section id="main" class="wrapper style1">
 				<header class="major">
-					<h2>Keep us going</h2>
-					<p>Donate today</p>
 				</header>
 				<div class="container">
                     <div class="row">
-						<div class="9u">
+						<div class="6u">
+                            <p>We require some additional information that PayPal does not normally collect. Please submit your employer and occupation before proceeding to make a donation.</p>
+                            <div id="paypal">
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                    <input type="hidden" name="cmd" value="_donations">
+                                    <input type="hidden" name="business" value="UKYJ8FSQWQFX8">
+                                    <input type="hidden" name="lc" value="US">
+                                    <input type="hidden" name="item_name" value="Ben Gould for Council 2017">
+                                    <input type="hidden" name="item_number" value="donation">
+                                    <input type="hidden" name="button_subtype" value="services">
+                                    <input type="hidden" name="no_note" value="0">
+                                    <input type="hidden" name="cn" value="If you didn't enter your employer and occupation on the previous page, enter it here:">
+                                    <input type="hidden" name="no_shipping" value="1">
+                                    <input type="hidden" name="rm" value="1">
+                                    <input type="hidden" name="return" value="http://www.bengould.org/thankyou.html">
+                                    <input type="hidden" name="cancel_return" value="http://www.bengould.org">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHosted">
+                                    
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input type="hidden" name="on0" value="Employer">Employer:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" name="os0" maxlength="200">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="hidden" name="on1" value="Occupation">Occupation:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" name="os1" maxlength="200">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p>Berkeley campaign finance regulations prohibit donations greater than $250. Please use the button below to make your contribution of $250 or less.</p>
+                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                    
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+
+
+                            </div>
+                        
                             <section>
-                                <div id="donation">
-                                    <p>Your support means a lot. It's what keeps us going - everything from handing out flyers to maintaining this website.<br><br>We need to take you to an external page to make a donation. Click one of the buttons below to contribute.</p>
+                                
+                                <div id="donation" style="display:none">
+                                    <p>Your support means a lot. It's what keeps us going - everything from handing out flyers to maintaining this website.
+                                        <br>
+                                        <br>
+                                    We need to take you to an external page to make a donation. Click one of the buttons below to contribute.</p>
+                                    
                                     <a href="http://bengould.nationbuilder.com/give#content" target="_blank" class="button special">Donate</a>
                                     
                                     <br><br>
+                                    
                                     <a href="http://bengould.nationbuilder.com#content" target="_blank" class="button special">PayPal</a>
+                                    
                                     <br><br>
+                                    
                                     <text><i>Want to make your money go further? Donate with PayPal for contributions of $30 or more</i></text>
+                                    
                                     <br><br>
                                     
                                     <p>Thank you for your contribution! You will receive an email with your receipt once it has been processed.</p>
+                                    
                                     <p>Prefer to donate by check? Email ben@bengould.org for mailing info</p>
+                                    
                                     <img src="images/Group_chat.jpg" alt="" class="image fit"/>
+                                    
                                 </div>
 					       </section>
                         </div>
@@ -104,22 +170,59 @@
 						</div>
 					</div>
 					<ul class="copyright">
-						<li>&copy; Ben Gould for Mayor 2016, FPPC ID # 1385186. All rights reserved.</li>
+						<li>&copy; Ben Gould for Council 2017. All rights reserved.</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<li>Images: <a href="http://unsplash.com">Unsplash</a> and <a href="https://www.flickr.com/photos/parksdh/">Daniel Parks</a></li>
 					</ul>
 				</div>
                 
-                <script type="text/javascript">
-                   /* var w = $(window).width();
-                    if (w < 960) {
-                        d3.select("#donation").html('We have to take you to an external page to submit donations on a smaller screen. Please click the button below to continue.<br><a href="http://bengould.nationbuilder.com/give#content" target="_blank" class="button alt">Continue</a><br><br><text>Want to donate with PayPal? Click this button!</text><a href="http://bengould.nationbuilder.com#content" target="_blank" class="button alt">Donate with PayPal</a>')
-                    } else {
-                        var q = $("#donation").width();
-                        d3.select("#donation").html('<iframe scrolling="no" src="https://bengould.nationbuilder.com/give#content" width="600" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe><p>If you experience any issues with this form, please contact me at <a href="mailto:ben@bengould.org">ben@bengould.org</a> and use one of the buttons on the side as an alternative.</p>');
-                        d3.select("#donationbuttons").html('<text>Issues with the form? Click the button below</text><a href="http://bengould.nationbuilder.com/give#content" target="_blank" class="button alt">Donate through NationBuilder</a><br><br><text>Want to donate with PayPal? Click this button!</text><a href="http://bengould.nationbuilder.com#content" target="_blank" class="button alt">Donate with PayPal</a>')
-                    }*/
-                </script>
+                <!-- PayPal Donate -->
+                <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+        
+                <script type="text/javascript"></script>
+                
+                <!-- <script>
+                    paypal.Button.render({
+                        
+                        env: 'sandbox',
+                        
+                        locale: 'en_US',
+                        
+                        style: {
+                            size: 'medium',
+                            color: 'blue',
+                            shape: 'pill'
+                        },
+                        
+                        client: {
+                            sandbox: 'AWsghkoO4LWjOvZTsmZkBPgIy0Uty4Tvvwu4qNAuSrv4pMl0_VkQYtu--gdLY15sq6F6K70wtZD5BPWa',
+                            production: 'AcPVCplYr1nP4dUeFSVeEEXrev9-C1ELf3LRgkbvC0xU6oACx7s7IDPVnxCdYRs-ZWbu1LY4xRmLRH2N'
+                        },
+                        
+                        payment: function() {
+                            // Set up the payment here, when the buyer clicks on the button
+                            var env = this.props.env;
+                            var client = this.props.client;
+                        
+                            return paypal.rest.payment.create(env, client, {
+                                transactions: [
+                                    {
+                                        amount: { total: '1.00', currency: 'USD' }
+                                    }
+                                ]
+                            });
+                        },
+                        
+                        onAuthorize: function(data, actions) {
+                            // Execute the payment here, when the buyer approves the transaction
+                            
+                            return actions.payment.execute().then(function() {
+                                // Show a success page to the buyer
+                            });
+                        }
+                        
+                    }, '#paypal-button');
+                </script> -->
 			</footer>
         
 	</body>
