@@ -755,7 +755,7 @@
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
 	}
-
+/*
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;
@@ -816,6 +816,7 @@
 			table.alt tfoot {
 				border-top: 0;
 			}
+*/
 
 /* Button */
 
@@ -1023,6 +1024,8 @@
         margin-top: 0.3em;
         margin-bottom: 0.3em;
         margin-left: 1.25em;
+        width: 85%;
+        height: auto;
     }
 
 	#header {
@@ -1178,7 +1181,7 @@
 		}
 
 		#banner h2 {
-			font-size: 3.5em;
+			font-size: 3em;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
