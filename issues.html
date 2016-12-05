@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ben Gould for Mayor of Berkeley</title>
+		<title>Issues - Ben Gould for Council</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -21,6 +21,7 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
+        <link rel="stylesheet" href="css/budget-vis.css" />
         
         <!-- Google Analytics -->
         <script>
@@ -32,82 +33,30 @@
           ga('create', 'UA-74684266-1', 'auto');
           ga('send', 'pageview');
 
-        </script>
-        
-        <style>
-        svg text {
-            font-family: "Open Sans", sans-serif;
-            font-size: 14px;
-            font-weight: 800;
-        }
-        .node rect {
-          cursor: move;
-          fill-opacity: .9;
-          shape-rendering: crispEdges;
-        }
-        .node text {
-          pointer-events: none;
-          /*text-shadow: 0 1px 0 #fff;*/
-          font-family: "Open Sans", sans-serif;
-          font-size: 13px;
-          font-weight: 200;
-        }
-        .link {
-          fill: none;
-          stroke: #000;
-          stroke-opacity: .3;
-        }
-        .link.text {
-            visibility:hidden;
-        }
-        .link:hover {
-          stroke-opacity: .75;
-        }
-        #hover_description {
-            position:absolute;
-            opacity:0;
-            padding:8px;
-            background-color:#dfdfdf;
-            visibility:hidden;
-            /*-webkit-transition:visibility 0s 0.1s,opacity 0.1s;*/
-            transition:visibility 0s 0.1s,opacity 0.1s;
-            font-size:14px;
-        }
-        #hover_description.show {
-            visibility:visible;
-            opacity:0.85;   
-            /*-webkit-transition-delay:0s;*/
-            transition-delay:0s;
-        }
-        .node.highlight text, .node.hover text {
-            font-size:15px;
-        }
-        .node.highlight rect, .node.hover rect {
-            stroke-width:2px;
-        }
-        select {
-            
-        }
-    </style>
+        </script>    
 	</head>
 	<body id="top">
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="http://www.bengould.org"><img src="images/logo_v3_trim.png" height=65em style="margin-top: 0.3em; margin-bottom: 0.3em"></a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index.html#vision">Meet Ben</a></li>
-						<li><a href="issues.html">Issues</a></li>
-                        <li><a href="voting.html">Voting</a></li>
-                        <li><a href="endorse.html">Endorse</a></li>
-                        <li><a href="index.html#join">Get Involved</a></li>
-                        <li style="display:none"><a href="index.html#contact">Contact</a></li>
-                        
-						<li><a href="donate.html" class="button special">Donate</a></li>
-					</ul>
-				</nav>
+				<div class="row">
+                    <div class="3u">
+                        <a href="http://www.bengould.org">
+                            <img src="images/logo_council.svg" class="logo">
+                        </a>
+                    </div>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#vision">Meet Ben</a></li>
+                            <li><a href="issues.html">Issues</a></li>
+                            <li><a href="voting.html">Voting</a></li>
+                            <li><a href="endorse.html">Endorsements</a></li>
+                            <li><a href="index.html#join">Get Involved</a></li>                        
+                            <li><a href="donate.html" class="button special">Donate</a></li>
+                        </ul>
+                    </nav>
+                </div>
 			</header>
 
 		<!-- Main -->
@@ -117,16 +66,18 @@
 				<div class="container">
 					<div class="row">
 						<div class="9u">
-							<section id="one">
-								<h2 id="issue_title">Issues</h2>
-									<p>I believe in the promise of Berkeley – a city of equal access to opportunity, of diversity of thought, of leadership in social justice and sustainability. However, in recent years, we’ve faced challenges which threaten our ability to live up to these values. The current City Council has not displayed the leadership needed to overcome them.<span id = "two"></p>
+							<section>
+								<h2 id="issue_title">Issues - coming soon!</h2>
+                                <div style="display: none">
+                                <p>I believe in the promise of Berkeley – a city of equal access to opportunity, of diversity of thought, of leadership in social justice and sustainability. However, in recent years, we’ve faced challenges which threaten our ability to live up to these values. The current City Council has not displayed the leadership needed to overcome them.<span id = "two"></span></p>
 									<p>
 									I’m running for Mayor to bring new ideas and new leadership to Council, so these issues get addressed as they come up, and to ensure we implement lasting solutions to truly address our long-term problems.
 									</p>
-                                <img src="images/New%20Ideas.jpg" alt="" class="image fit"/>
+                                <img src="images/New%20Ideas.jpg" alt="" class="image fit" height=40%/>
+                                    </div>
 							</section>
 				<section class="title_summary">
-				<div class="container">
+				<div class="container" style="display:none">
 					<div class="row">
 						<div class="9u">
 							   <section>
@@ -138,7 +89,6 @@
 									<p>This doesn’t align with our values. We believe in an inclusive Berkeley, which provides opportunities for new and old residents alike – not one that drives out its teachers and nurses. 
 									</p>
 									<p>To address this crisis, we need to build more housing at all income levels. New construction will enable people to move here without displacing existing residents, and affordable housing will ensure we can retain our socioeconomic diversity. Here’s how we can do more to facilitate the construction of both market-rate and affordable housing:</p>
-
 									<h4 class="underline">New Construction</h4>
 									<ul class="bulleted">
 										<li>Allow homeowners to subdivide their homes into duplexes or triplexes so seniors can downsize without relocating, and families can stay together as children become adults, by amending R-1 zoning and the hillside overlay.</li>
@@ -188,6 +138,7 @@
 									<h3>Budget Priorities and Fiscal Responsibility</h3>
 									<p>Effective management of Berkeley’s $430 million annual budget ($159M discretionary, $271M restricted funding) is critical for ensuring the City can provide adequate and effective services. Right now, however, the City lacks resources for many programs, ranging from unfunded pension liabilities to deferred infrastructure maintenance to capital improvements we can’t raise funds to pay for.
 									</p>
+                                    <p>(Want to learn more? Check out my <a href="/budget.html">budget visualization page</a> to see where taxpayer money goes.)</p>
 									<p>Additionally, there are significant structural intergenerational inequities built into the current tax structure. Longtime established property owners (who by necessity tend to be older) pay significantly lower assessed taxes than newcomers, thanks to protections established by Prop 13, effectively resulting in young new homeowner subsidizing the use of city services for longtime residents. In some cases, one new homeowner might be paying as much as ten times more in taxes than what the previous occupant was paying.
 									</p>
 									<p>New residents who are forced to pay higher taxes should be able to see their increased tax revenue fund improvements to the city, but most of these additional taxes go into the general (discretionary) fund, where they’re primarily used to fund citywide necessities like police and fire – not investing in newer and better technologies and infrastructure, or greater fiscal stability for the City. As Mayor, I’ll support the following policies to help move our city towards a more sustainable budget and spend our resources better to invest in the future:
@@ -206,7 +157,7 @@
 
 
 						</div>
-						<div class="3u" id="sidebox">
+						<div class="3u" id="sidebox" style="display: none">
 							<h4>Navigate the Issues</h4>
 								<ul id="issue_nav_list">
 									<li> <a href="#two">1. Housing Affordability</a></li>
@@ -235,14 +186,14 @@
 										<li>Connect on social media below</li>
 									</ul>
 							<ul class="icons">
-								<li><a href="http://www.twitter.com/bgouldformayor" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="http://www.facebook.com/bgouldformayor" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                                <li><a href="http://www.instagram.com/bgouldformayor" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="http://www.twitter.com/bgould4berkeley" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="http://www.facebook.com/bgould4berkeley" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="http://www.instagram.com/bgould4berkeley" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							</ul>
 						</div>
 					</div>
 					<ul class="copyright">
-						<li>&copy; Ben Gould for Mayor 2016, FPPC ID # 1385186. All rights reserved.</li>
+						<li>&copy; Ben Gould for Council 2017. All rights reserved.</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<li>Images: <a href="http://unsplash.com">Unsplash</a> and <a href="https://www.flickr.com/photos/parksdh/">Daniel Parks</a></li>
 					</ul>

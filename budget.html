@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ben Gould for Mayor of Berkeley</title>
+		<title>Ben Gould for Council</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -21,7 +21,9 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
-        
+       
+        <link rel="stylesheet" href="css/budget-vis.css" />
+
         <!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,81 +35,29 @@
           ga('send', 'pageview');
 
         </script>
-        
-        <style>
-        svg text {
-            font-family: "Open Sans", sans-serif;
-            font-size: 14px;
-            font-weight: 800;
-        }
-        .node rect {
-          cursor: move;
-          fill-opacity: .9;
-          shape-rendering: crispEdges;
-        }
-        .node text {
-          pointer-events: none;
-          /*text-shadow: 0 1px 0 #fff;*/
-          font-family: "Open Sans", sans-serif;
-          font-size: 13px;
-          font-weight: 200;
-        }
-        .link {
-          fill: none;
-          stroke: #000;
-          stroke-opacity: .3;
-        }
-        .link.text {
-            visibility:hidden;
-        }
-        .link:hover {
-          stroke-opacity: .75;
-        }
-        #hover_description {
-            position:absolute;
-            opacity:0;
-            padding:8px;
-            background-color:#dfdfdf;
-            visibility:hidden;
-            /*-webkit-transition:visibility 0s 0.1s,opacity 0.1s;*/
-            transition:visibility 0s 0.1s,opacity 0.1s;
-            font-size:14px;
-        }
-        #hover_description.show {
-            visibility:visible;
-            opacity:0.85;   
-            /*-webkit-transition-delay:0s;*/
-            transition-delay:0s;
-        }
-        .node.highlight text, .node.hover text {
-            font-size:15px;
-        }
-        .node.highlight rect, .node.hover rect {
-            stroke-width:2px;
-        }
-        select {
-            
-        }
-    </style>
 	</head>
 	<body id="top">
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="http://www.bengould.org"><img src="images/logo_v3_trim.png" height=65em style="margin-top: 0.3em; margin-bottom: 0.3em"></a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index.html#vision">Meet Ben</a></li>
-						<li><a href="issues.html">Issues</a></li>
-                        <li><a href="voting.html">Voting</a></li>
-                        <li><a href="endorse.html">Endorse</a></li>
-                        <li><a href="index.html#join">Get Involved</a></li>
-                        <li style="display:none"><a href="index.html#contact">Contact</a></li>
-                        
-						<li><a href="donate.html" class="button special">Donate</a></li>
-					</ul>
-				</nav>
+				<div class="row">
+                    <div class="3u">
+                        <a href="http://www.bengould.org">
+                            <img src="images/logo_council.svg" class="logo">
+                        </a>
+                    </div>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#vision">Meet Ben</a></li>
+                            <li><a href="issues.html">Issues</a></li>
+                            <li><a href="voting.html">Voting</a></li>
+                            <li><a href="endorse.html">Endorsements</a></li>
+                            <li><a href="index.html#join">Get Involved</a></li>                        
+                            <li><a href="donate.html" class="button special">Donate</a></li>
+                        </ul>
+                    </nav>
+                </div>
 			</header>
 
 		<!-- Main -->
@@ -164,14 +114,14 @@
 										<li>Connect on social media below</li>
 									</ul>
 							<ul class="icons">
-								<li><a href="http://www.twitter.com/bgouldformayor" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="http://www.facebook.com/bgouldformayor" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                                <li><a href="http://www.instagram.com/bgouldformayor" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="http://www.twitter.com/bgould4berkeley" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="http://www.facebook.com/bgould4berkeley" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="http://www.instagram.com/bgould4berkeley" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							</ul>
 						</div>
 					</div>
 					<ul class="copyright">
-						<li>&copy; Ben Gould for Mayor 2016, FPPC ID # 1385186. All rights reserved.</li>
+						<li>&copy; Ben Gould for Council 2017. All rights reserved.</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<li>Images: <a href="http://unsplash.com">Unsplash</a> and <a href="https://www.flickr.com/photos/parksdh/">Daniel Parks</a></li>
 					</ul>

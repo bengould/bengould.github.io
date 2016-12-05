@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ben Gould for Mayor of Berkeley</title>
+		<title>Ben Gould for Council</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -21,6 +21,7 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
+        <link rel="stylesheet" href="css/budget-vis.css" />
         
         <!-- Google Analytics -->
         <script>
@@ -33,81 +34,29 @@
           ga('send', 'pageview');
 
         </script>
-        
-        <style>
-        svg text {
-            font-family: "Open Sans", sans-serif;
-            font-size: 14px;
-            font-weight: 800;
-        }
-        .node rect {
-          cursor: move;
-          fill-opacity: .9;
-          shape-rendering: crispEdges;
-        }
-        .node text {
-          pointer-events: none;
-          /*text-shadow: 0 1px 0 #fff;*/
-          font-family: "Open Sans", sans-serif;
-          font-size: 13px;
-          font-weight: 200;
-        }
-        .link {
-          fill: none;
-          stroke: #000;
-          stroke-opacity: .3;
-        }
-        .link.text {
-            visibility:hidden;
-        }
-        .link:hover {
-          stroke-opacity: .75;
-        }
-        #hover_description {
-            position:absolute;
-            opacity:0;
-            padding:8px;
-            background-color:#dfdfdf;
-            visibility:hidden;
-            /*-webkit-transition:visibility 0s 0.1s,opacity 0.1s;*/
-            transition:visibility 0s 0.1s,opacity 0.1s;
-            font-size:14px;
-        }
-        #hover_description.show {
-            visibility:visible;
-            opacity:0.85;   
-            /*-webkit-transition-delay:0s;*/
-            transition-delay:0s;
-        }
-        .node.highlight text, .node.hover text {
-            font-size:15px;
-        }
-        .node.highlight rect, .node.hover rect {
-            stroke-width:2px;
-        }
-        select {
-            
-        }
-    </style>
 	</head>
 	<body id="top">
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="http://www.bengould.org"><img src="images/logo_v3_trim.png" height=65em style="margin-top: 0.3em; margin-bottom: 0.3em"></a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index.html#vision">Meet Ben</a></li>
-						<li><a href="issues.html">Issues</a></li>
-                        <li><a href="voting.html">Voting</a></li>
-                        <li><a href="endorse.html">Endorse</a></li>
-                        <li><a href="index.html#join">Get Involved</a></li>
-                        <li style="display:none"><a href="index.html#contact">Contact</a></li>
-                        
-						<li><a href="donate.html" class="button special">Donate</a></li>
-					</ul>
-				</nav>
+				<div class="row">
+                    <div class="3u">
+                        <a href="http://www.bengould.org">
+                            <img src="images/logo_council.svg" class="logo">
+                        </a>
+                    </div>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#vision">Meet Ben</a></li>
+                            <li><a href="issues.html">Issues</a></li>
+                            <li><a href="voting.html">Voting</a></li>
+                            <li><a href="endorse.html">Endorsements</a></li>
+                            <li><a href="index.html#join">Get Involved</a></li>                        
+                            <li><a href="donate.html" class="button special">Donate</a></li>
+                        </ul>
+                    </nav>
+                </div>
 			</header>
 
 		<!-- Main -->
@@ -115,16 +64,16 @@
 			
 					<div class="container">
 						<div class="row">
-							<div class="12u">
+							<div class="6u">
                                 <section id="register">
                                     <h2 id="register_title">Register to Vote!</h2>
                                     <p>Live in Berkeley, but not registered to vote? Or worse yet, not sure if you're registered to vote? We've got you covered. Registering only takes a minute and can easily be done online.</p>
                                     <a href="http://registertovote.ca.gov/" target="_blank" class="button special">Register to vote!</a>
                                     <br><br>
                                     <a href="https://www.acgov.org/alco_ssl_app/rov/voter_info/voter_profile.jsp?formLanguage=E" target="_blank" class="button special">Check my registration</a>
-                                    <br><br>
-                                    <p>Not sure if you're eligible to vote? <a href="http://www.acgov.org/rov/registration.htm">Check out the basic requirements </a>. If you live in Berkeley (even if you're a student) and are otherwise eligible to vote, you can register anytime before <b>October 23rd</b> to cast your ballot in the Berkeley races (October 8th for mail-in ballots).</p>
                                 </section>
+                            </div>
+                            <div class="6u">
 								<section id="summary_top">
 									<h2 id="issue_title">Ranked Choice Voting</h2>
 										<p>Berkeley uses ranked choice voting (also known as instant runoff voting) to select the most preferable candidate from a field of candidates, eliminating the need for a top-two system used elsewhere in the US. As a voter, this method allows you to list three candidates, in order of your preference. As the votes are counted, a series of instant runoffs will sort through candidates until one has a majority of the votes (through some combination of first-, second-, or third-place votes).</p>
@@ -135,13 +84,8 @@
 										<li><i>2</i>If there is a majority winner, the winner is announced. Otherwise, the process continues to step 3</li>
 										<li><i>3</i>The last place finisher is eliminated</li>
 										<li><i>4</i>Voters who voted for the last place finisher have their votes shifted. Their second choice moves up to their first choice and so on.</li>
-										<li><i>5</i>This process continute until a winner is selected</li>	
-
+										<li><i>5</i>This process continute until a winner is selected</li>
 									</ol>
-
-		
-
- 
 
 								</section>
 								<section id="summary_bottom">
@@ -202,14 +146,14 @@
 										<li>Connect on social media below</li>
 									</ul>
 							<ul class="icons">
-								<li><a href="http://www.twitter.com/bgouldformayor" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="http://www.facebook.com/bgouldformayor" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                                <li><a href="http://www.instagram.com/bgouldformayor" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="http://www.twitter.com/bgould4berkeley" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="http://www.facebook.com/bgould4berkeley" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="http://www.instagram.com/bgould4berkeley" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 							</ul>
 						</div>
 					</div>
 					<ul class="copyright">
-						<li>&copy; Ben Gould for Mayor 2016, FPPC ID # 1385186. All rights reserved.</li>
+						<li>&copy; Ben Gould for Council 2017. All rights reserved.</li>
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<li>Images: <a href="http://unsplash.com">Unsplash</a> and <a href="https://www.flickr.com/photos/parksdh/">Daniel Parks</a></li>
 					</ul>
