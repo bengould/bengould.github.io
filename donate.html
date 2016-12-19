@@ -83,62 +83,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!--
-
-                            <div class="6u" style="display:none">
-                                <p>Our payment processor requires you to enter your employer and occupation before proceeding to make your donation.</p>
-                                <p>Please note that Berkeley campaign finance regulations prohibit donations greater than $250. After completing the required employer and occupation information above, use the button to make your contribution of up to $250.</p>
-                            </div>
-                            <div class="6u" style="display:none">
-                                <div id="paypal">
-                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                                        <input type="hidden" name="cmd" value="_donations">
-                                        <input type="hidden" name="business" value="UKYJ8FSQWQFX8">
-                                        <input type="hidden" name="lc" value="US">
-                                        <input type="hidden" name="item_name" value="Ben Gould for Council 2017">
-                                        <input type="hidden" name="item_number" value="donation">
-                                        <input type="hidden" name="button_subtype" value="services">
-                                        <input type="hidden" name="no_note" value="0">
-                                        <input type="hidden" name="cn" value="If you didn't enter your employer and occupation on the previous page, enter it here:">
-                                        <input type="hidden" name="no_shipping" value="2">
-                                        <input type="hidden" name="rm" value="1">
-                                        <input type="hidden" name="return" value="http://www.bengould.org">
-                                        <input type="hidden" name="cancel_return" value="http://www.bengould.org/thankyou.html">
-                                        <input type="hidden" name="currency_code" value="USD">
-                                        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHosted">
-
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <input type="hidden" name="on0" value="Employer">Employer:
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="os0" maxlength="200">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="hidden" name="on1" value="Occupation">Occupation:
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="os1" maxlength="200">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <br>
-                                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-
-                                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                    </form>
-                                </div>
-                                <p>Prefer to donate by check? Email ben@bengould.org for mailing info</p>
-                            </div>
-                        -->
 				</div>
 			</section>
 
@@ -146,11 +90,10 @@
 			<footer id="footer">
 				<div class="container">
 					<div class="row double">
-						<div>
+						<div class="6u">
 							<h2 id="contact">Connect with us</h2>
                             <ul class="actions">
 										<li>Make your voice heard - email Ben directly at <a href="mailto:ben@bengould.org">ben@bengould.org</a></li>
-                                        <br>
 										<li>Media inquiries? <a href="mailto:media@bengould.org">media@bengould.org</a></li>
                                         <br>
 										<li>Connect on social media below</li>
@@ -164,57 +107,9 @@
 					</div>
 					<ul class="copyright">
 						<li>Paid for by Ben Gould for Council 2017, FPPC ID # 1392578. &copy; All rights reserved.</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Design: Template by <a href="http://templated.co">TEMPLATED</a>. Customized by Ben Gould</li>
 					</ul>
 				</div>
-                
-                <!-- PayPal Donate -->
-                <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
-        
-                <script type="text/javascript"></script>
-                
-                <!-- <script>
-                    paypal.Button.render({
-                        
-                        env: 'sandbox',
-                        
-                        locale: 'en_US',
-                        
-                        style: {
-                            size: 'medium',
-                            color: 'blue',
-                            shape: 'pill'
-                        },
-                        
-                        client: {
-                            sandbox: 'AWsghkoO4LWjOvZTsmZkBPgIy0Uty4Tvvwu4qNAuSrv4pMl0_VkQYtu--gdLY15sq6F6K70wtZD5BPWa',
-                            production: 'AcPVCplYr1nP4dUeFSVeEEXrev9-C1ELf3LRgkbvC0xU6oACx7s7IDPVnxCdYRs-ZWbu1LY4xRmLRH2N'
-                        },
-                        
-                        payment: function() {
-                            // Set up the payment here, when the buyer clicks on the button
-                            var env = this.props.env;
-                            var client = this.props.client;
-                        
-                            return paypal.rest.payment.create(env, client, {
-                                transactions: [
-                                    {
-                                        amount: { total: '1.00', currency: 'USD' }
-                                    }
-                                ]
-                            });
-                        },
-                        
-                        onAuthorize: function(data, actions) {
-                            // Execute the payment here, when the buyer approves the transaction
-                            
-                            return actions.payment.execute().then(function() {
-                                // Show a success page to the buyer
-                            });
-                        }
-                        
-                    }, '#paypal-button');
-                </script> -->
 			</footer>
         
 	</body>

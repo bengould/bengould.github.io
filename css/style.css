@@ -621,10 +621,18 @@
 			width: 100%;
 		}
 
+            .image.fit.captioned {
+                margin-bottom: 0em;
+            }
+
 			.image.fit img {
 				display: block;
 				width: 100%;
 			}
+
+    figure {
+        font-size: 0.9em;
+    }
 
 /* List */
 
