@@ -962,6 +962,19 @@
 			color: #ffffff !important;
 		}
 
+		.bordered{
+   			border:1px solid #021a40;
+
+		}
+
+		.group_press{
+			margin-bottom: 30px;
+		}
+
+		#v_line{
+			border-left:1px solid #D0CACA;
+		}
+
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
