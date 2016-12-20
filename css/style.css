@@ -957,6 +957,11 @@
 			color: #ffffff !important;
 		}
 
+		.grey {
+			background-color: grey;
+			color: #ffffff !important;
+		}
+
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
