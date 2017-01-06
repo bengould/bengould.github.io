@@ -225,7 +225,7 @@
 
 	#sidebox{
 		position: fixed;
-    	top: 23.33%;
+    	top: 15.33%;
     	left: 66%;
     }
 
@@ -1015,6 +1015,10 @@
 			color: #555f66;
 
 		}
+
+        .wrapper.style3 {
+            padding: 3em 0 4em 0;
+        }
 
 		.wrapper.style2 {
 			background: #555f66; /*original 192024*/
