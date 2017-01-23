@@ -968,8 +968,14 @@
 
 		}
 
+        .greyborder{
+   			border:1px solid lightgray;
+
+		}
+
 		.group_press{
-			margin-bottom: 30px;
+            min-width: 270px;
+            margin: 0px 20px 30px 0px;
 		}
 
 		#v_line{
