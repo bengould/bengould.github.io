@@ -62,6 +62,19 @@
         /></noscript>
         <!-- DO NOT MODIFY -->
         <!-- End Facebook Pixel Code -->
+        
+        <!-- Add event to the button's click handler -->
+        <script type="text/javascript">
+        $( '#donatebtn' ).click(function() {
+        fbq('track', 'AddToCart', {
+        content_ids: ['1234'],
+        content_type: 'product',
+        value: 2.99,
+        currency: 'USD'
+        });
+        });
+        </script>
+
 
 	</head>
 	<body id="top">
@@ -105,7 +118,7 @@
                         <div class="12u">
                             <div id="donation" class="4u" style="margin:auto; text-align:center">
 
-                                <a href="http://bengould.nationbuilder.com#content" target="_blank" class="button special">Donate online</a>
+                                <a href="http://bengould.nationbuilder.com#content" target="_blank" class="button special" id="donatebtn">Donate online</a>
 
                                 <br>                                   
                                 <p>Prefer to donate by check? Make it out to "Ben Gould for Council 2017", include your employer and occupation information, and mail it to:</p>
