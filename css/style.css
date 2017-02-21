@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("http://fonts.googleapis.com/css?family=Roboto:700,500,400,300");
+@import url("http://fonts.googleapis.com/css?family=Roboto:900,700,500,400,300");
 @import url("http://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,700");
 
 /*
@@ -958,6 +958,11 @@
 		input[type="button"].special,
 		.button.special {
 			background-color: #3fa9f5;
+			color: #ffffff !important;
+		}
+
+        .button.special2 {
+			background-color: #004f84;
 			color: #ffffff !important;
 		}
 
