@@ -15,8 +15,8 @@ body, header, footer {
 
 .icon {
     font-size: 3em;
-    padding-bottom: 1em;
-    padding-top: 0.75em;
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
 }
 
 .icon-small {
@@ -38,9 +38,9 @@ body, header, footer {
   padding-bottom: 50px;
 }
 
-.card.help {
-    padding: 20px 10px;
-    border-width: 10px;
+.card {
+    padding: 10px 10px;
+    border-width: 15px;
     border-color: #555f66;
     border-radius: 25px;
 }
@@ -53,6 +53,11 @@ body, header, footer {
 .card-body a:hover {
     text-decoration: underline;
     color: #3fa9f5;
+}
+
+.card-body {
+    padding-top: 0px;
+    padding-bottom: 0.5em;
 }
 
 .btn-block {
@@ -80,6 +85,10 @@ footer {
 .no-bottom h3 {
     margin-bottom: 10px;
     margin-top: 15px;
+}
+
+.contact-us {
+    margin-bottom: 0em;
 }
 
 /* Supplemental from Grayscale.css */
@@ -144,6 +153,9 @@ a:focus, a:hover {
     font-size: 18px;
     background-color: white;
     /*text-transform: uppercase;*/
+}
+
+#mainNav {
 }
 
 #mainNav a {
