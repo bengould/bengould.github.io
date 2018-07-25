@@ -91,6 +91,26 @@ footer {
     margin-bottom: 0em;
 }
 
+.sticky-offset {
+    top: 8em;
+}
+
+.d4 {
+    /*color: #3fa9f5;*/
+}
+
+.endorsements p {
+}
+
+.endorsements b {
+    font-weight: 400;
+}
+
+.endorsements h3 {
+    margin-bottom: 0em;
+    margin-top: 1.1em;
+}
+
 /* Supplemental from Grayscale.css */
 body {
     font-family: "Roboto", "Source Sans", sans-serif;
