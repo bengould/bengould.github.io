@@ -321,7 +321,7 @@ a:focus, a:hover {
     padding: 200px 0;
     text-align: center;
     color: white;
-    background: url("../images/Bengould_lodap.jpg") no-repeat bottom center scroll;
+    background: url("../images/Ben_downtown_2.jpg") no-repeat bottom center scroll;
     background-color: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -354,7 +354,8 @@ a:focus, a:hover {
 }
 
 .masthead-box {
-    background-color: rgba(250, 250, 250, 0.5)
+    background-color: white; /* rgba(250, 250, 250, 0.5) */
+    border-radius: 25px;
 }
 
 @media (min-width: 768px) {
