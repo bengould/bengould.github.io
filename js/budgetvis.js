@@ -146,7 +146,7 @@ window.onload = function() {
           .attr("width", sankey.nodeWidth())
           .style("fill", function(d) {
               switch (d.name) {
-                  case "General Fund":
+                  case "General Funds":
                       d.color = "green";
                       break;
                   case "Restricted Funds":
