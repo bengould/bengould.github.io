@@ -3,6 +3,7 @@ d3.sankey = function() {
       nodeWidth = 24,
       nodePadding = 8,
       size = [1, 1],
+      align = 'justify', // left, right, center or justify
       nodes = [],
       links = [];
 
@@ -33,6 +34,12 @@ d3.sankey = function() {
   sankey.size = function(_) {
     if (!arguments.length) return size;
     size = _;
+    return sankey;
+  };
+
+  sankey.align = function(_) {
+    if (!arguments.length) return align;
+    align = _.toLowerCase();
     return sankey;
   };
 
@@ -110,16 +117,19 @@ d3.sankey = function() {
   function computeNodeBreadths() {
     var remainingNodes = nodes,
         nextNodes,
-        x = 0;
+        x = 0,
+        reverse = (align === 'right'); // Reverse traversal direction
 
     while (remainingNodes.length) {
       nextNodes = [];
       remainingNodes.forEach(function(node) {
         node.x = x;
         node.dx = nodeWidth;
-        node.sourceLinks.forEach(function(link) {
-          if (nextNodes.indexOf(link.target) < 0) {
-            nextNodes.push(link.target);
+
+        node[reverse ? 'targetLinks' : 'sourceLinks'].forEach(function(link) {
+          var nextNode = link[reverse ? 'source' : 'target'];
+          if (nextNodes.indexOf(nextNode) < 0) {
+            nextNodes.push(nextNode);
           }
         });
       });
@@ -127,17 +137,33 @@ d3.sankey = function() {
       ++x;
     }
 
-    //
-    moveSinksRight(x);
+    if (reverse) {
+      // Flip nodes horizontally
+      nodes.forEach(function(node) {
+        node.x *= -1;
+        node.x += x - 1;
+      });
+    }
+
+    if (align === 'center') {
+      moveSourcesRight();
+    }
+    if (align === 'justify') {
+      moveSinksRight(x);
+    }
+
     scaleNodeBreadths((size[0] - nodeWidth) / (x - 1));
   }
 
   function moveSourcesRight() {
-    nodes.forEach(function(node) {
-      if (!node.targetLinks.length) {
-        node.x = d3.min(node.sourceLinks, function(d) { return d.target.x; }) - 1;
-      }
-    });
+    nodes.slice()
+      // Pack nodes from right to left
+      .sort(function(a, b) { return b.x - a.x; })
+      .forEach(function(node) {
+        if (!node.targetLinks.length) {
+          node.x = d3.min(node.sourceLinks, function(d) { return d.target.x; }) - 1;
+        }
+      });
   }
 
   function moveSinksRight(x) {
@@ -161,7 +187,6 @@ d3.sankey = function() {
         .entries(nodes)
         .map(function(d) { return d.values; });
 
-    //
     initializeNodeDepth();
     resolveCollisions();
     for (var alpha = 1; iterations > 0; --iterations) {
@@ -189,7 +214,7 @@ d3.sankey = function() {
     }
 
     function relaxLeftToRight(alpha) {
-      nodesByBreadth.forEach(function(nodes, breadth) {
+      nodesByBreadth.forEach(function(nodes) {
         nodes.forEach(function(node) {
           if (node.targetLinks.length) {
             var y = d3.sum(node.targetLinks, weightedSource) / d3.sum(node.targetLinks, value);
@@ -237,14 +262,14 @@ d3.sankey = function() {
 
         // If the bottommost node goes outside the bounds, push it back up.
         dy = y0 - nodePadding - size[1];
-        if (dy > 0) {
+        while (y0 > 0) {
           y0 = node.y -= dy;
 
           // Push any overlapping nodes back up.
           for (i = n - 2; i >= 0; --i) {
             node = nodes[i];
             dy = node.y + node.dy + nodePadding - y0;
-            if (dy > 0) node.y -= dy;
+            if (dy > 0) node.y -= dy * 2;
             y0 = node.y;
           }
         }

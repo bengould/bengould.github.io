@@ -30,8 +30,6 @@
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
 
-        <script src="Budget data/budgetdata.js"></script>
-
         <script src="Budget data/sankeybudget.js"></script>
         <script src="js/sankey.js"></script>
 
@@ -82,10 +80,33 @@
             </div>
         </nav>
 
-        <section id="budgetViz">
-            <b><div id="hover_description"></div></b>
-            <div id="chart"></div>
-        </section>
+        <div id="budgetContainer">
+            <div id="budgetViz">
+                <h2>Interactive Visualization</h2>
+                <b><div id="hover_description"></div></b>
+                <div id="chart"></div>
+            </div>
+            <div id="budgetInfo">
+                <section>
+                    <h3>Annual Budget</h3>
+                    <p>This diagram depicts the flow of money through the City of Berkeley: from sources of revenue (left) through funds (General and Restricted) into departmental expenses (right).</p>
+                    <p>You can select a fiscal year (2013 through 2017) using the drop-down menu below. (FY 2013 and 2014 are real revenues & expenditures, FY 2015 is approved budget, and FY 2016 and 2017 are proposed budgets).</p>
+                    <p>Mouse over the chart to see specific dollar amounts!</p>
+                    <p>Select a year: <select id="fy"></select></p>
+                </section>
+                <hr />
+                <section>
+                    <h3>Learn more</h3>
+                    <ul class="alt">
+                        <li><a href="http://www.ci.berkeley.ca.us/City_Manager/Press_Releases/2015/2015-11-10_Berkeleyan_s_activism_offers_glimpse_at_the_power_of_Open_Data.aspx">Press Release</a></li>
+                        <li><a href="http://www.ci.berkeley.ca.us/budget/">City of Berkeley Budget Office</a></li>
+                        <li><a href="http://www.ci.berkeley.ca.us/uploadedFiles/Manager/Budget/FY%202016%20and%20FY%202017%20Final%20Adopted%20Biennial%20Budget%20Book.pdf">FY 2016-2017 Adopted Biennial Budget</a></li>
+                        <li><a href="http://www.ci.berkeley.ca.us/uploadedFiles/Manager/Budget/FY%202016%20and%20FY%202017%20Final%20Adopted%20CIP%20Book.pdf">FY 2016-2017 Adopted Capital Improvement Plan</a></li>
+                        <li>Inspired by <a href="http://openbudgetoakland.org/">Open Budget Oakland</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
         
         <!-- Modal -->
         <div class="modal fade" id="MailChimpSignup" tabindex="-1" role="dialog" aria-labelledby="MailChimpSignupTitle" aria-hidden="true">
