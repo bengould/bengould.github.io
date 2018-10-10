@@ -58,8 +58,9 @@ function readCSV(file, table_names, callback) {
                             if (val == "-") {
                                 val = "0";
                             }
-                            row_obj[currentTableHeader[j]] = val;
+                            row_obj[currentTableHeader[j].trim()] = val;
                         }
+
                         if (currentSubTable != null) {
                             tables[currentTableHeader[0]][currentSubTable][row[0]] = row_obj;
                         } else {
@@ -196,7 +197,7 @@ function load_vis(graph) {
             value: x.value
         };
     });
-    
+
     sankey
         .nodes(graph.nodes)
         .links(graph.links)
