@@ -33,7 +33,7 @@ function makeLink(source, target, value) {
     };
 }
 
-function readCSV(file, table_names) {
+function readCSV(file, table_names, callback) {
     let rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function() {
@@ -54,7 +54,11 @@ function readCSV(file, table_names) {
                     } else if (row.every((x) => x != "")) {
                         let row_obj = {};
                         for (let j = 1; j < row.length; j++) {
-                            row_obj[currentTableHeader[j]] = row[j];
+                            let val = row[j];
+                            if (val == "-") {
+                                val = "0";
+                            }
+                            row_obj[currentTableHeader[j]] = val;
                         }
                         if (currentSubTable != null) {
                             tables[currentTableHeader[0]][currentSubTable][row[0]] = row_obj;
@@ -66,15 +70,14 @@ function readCSV(file, table_names) {
                         currentSubTable = row[0];
                     }
                 }
-                console.log(tables);
-                load_nodes(tables);
+                callback(tables);
             }
         }
     }
     rawFile.send(null);
 }
 
-function load_nodes(data) {
+function load_nodes(data, year) {
 
     let gf_revenues = "General Fund: Revenues";
     let gf_expenditures = "General Fund: Expenditures";
@@ -82,7 +85,6 @@ function load_nodes(data) {
     let rf_revenues = "Restricted Fund: Revenues";
     let rf_expenditures = "Restricted Funds: Expenditures";
 
-    year = "FY 2013";
     let links = [];
     let nodes = [];
 
@@ -194,7 +196,7 @@ function load_vis(graph) {
             value: x.value
         };
     });
-    console.log("About to sankey");
+    
     sankey
         .nodes(graph.nodes)
         .links(graph.links)
@@ -381,28 +383,32 @@ function load_vis(graph) {
 
 window.onload = function() {
 
-    // let fySelect = document.getElementById("fy");
-    // for (let i = 0; i < yearOptions.length; i++) {
-    //     let option = this.document.createElement("option");
-    //     option.value = yearOptions[i];
-    //     option.innerHTML = yearOptions[i];
-    //     fySelect.appendChild(option);
-    // }
-
-    // fySelect.onchange = function() {
-    //     let chart = document.getElementById("chart");
-    //     while (chart.firstChild) {
-    //         chart.removeChild(chart.firstChild);
-    //     }
-    //     load(get_data(this.value));
-    // }
-
-    let year = this.document.getElementById("fy").value;
-    console.log(year);
-
     let table_names = ["General Fund: Revenues", "General Fund: Expenditures", "Restricted Fund: Revenues", "Restricted Funds: Expenditures", "All Fund: Expenditures"];
 
-    readCSV("/Budget data/BerkeleyBudgetCSV.csv", table_names);
+    let fySelect = document.getElementById("fy");
+    for (let i = 0; i < yearOptions.length; i++) {
+        let option = this.document.createElement("option");
+        option.value = yearOptions[i];
+        option.innerHTML = yearOptions[i];
+        fySelect.appendChild(option);
+    }
+
+    fySelect.onchange = function() {
+        let chart = document.getElementById("chart");
+        while (chart.firstChild) {
+            chart.removeChild(chart.firstChild);
+        }
+        // load(get_data(this.value));
+        let year = this.value;
+        readCSV("/Budget data/BerkeleyBudgetCSV.csv", table_names, function(table_data) {
+            load_nodes(table_data, year);
+        });
+    }
+
+    let year = this.document.getElementById("fy").value;
+    readCSV("/Budget data/BerkeleyBudgetCSV.csv", table_names, function(table_data) {
+        load_nodes(table_data, year);
+    });
 
 }
 
