@@ -127,7 +127,7 @@ strong {
 }
 
 .section {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-2xl) 0;
 }
 
 .section-alt {
@@ -146,7 +146,7 @@ strong {
    ========================================================================== */
 
 .hero {
-    padding: var(--space-4xl) 0 var(--space-3xl);
+    padding: var(--space-3xl) 0 var(--space-2xl);
     background: var(--bg);
 }
 
@@ -232,210 +232,72 @@ strong {
 }
 
 /* ==========================================================================
-   Featured Case Study — Measure FF Centerpiece
+   Work Samples — Horizontal Scroll
    ========================================================================== */
 
-.featured-case {
-    padding: var(--space-4xl) 0;
-    background: var(--navy);
-    color: white;
+#samples {
+    position: relative;
 }
 
-.featured-case .container {
-    max-width: var(--container-max);
+#samples .container {
+    max-width: var(--container-wide);
+    position: relative;
 }
 
-.featured-label {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
+.section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     margin-bottom: var(--space-md);
 }
 
-.featured-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: var(--space-xl);
-    letter-spacing: -0.02em;
+.section-header h2 {
+    margin-bottom: 0;
 }
 
-.featured-stats {
-    display: flex;
-    gap: var(--space-3xl);
-    margin-bottom: var(--space-xl);
+.scroll-hint {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    animation: nudge 2s ease-in-out infinite;
 }
 
-.featured-stat {
-    display: flex;
-    flex-direction: column;
+@keyframes nudge {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50% { transform: translateX(4px); opacity: 1; }
 }
-
-.featured-stat-value {
-    font-family: var(--font-display);
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: white;
-    letter-spacing: -0.03em;
-    line-height: 1;
-}
-
-.featured-stat-label {
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: var(--space-sm);
-}
-
-.featured-arc {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--accent);
-    margin-bottom: var(--space-xl);
-    letter-spacing: -0.01em;
-}
-
-.featured-arc span {
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0 var(--space-sm);
-}
-
-.featured-desc {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 640px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* ==========================================================================
-   The Spectrum — From Lightweight to Full Campaign
-   ========================================================================== */
-
-.spectrum {
-    padding: var(--space-4xl) 0;
-    background: var(--bg);
-}
-
-.spectrum-intro {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    max-width: 640px;
-    margin-bottom: var(--space-3xl);
-}
-
-.spectrum-levels {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-}
-
-/* Vertical progression line */
-.spectrum-levels::before {
-    content: '';
-    position: absolute;
-    left: 11px;
-    top: 24px;
-    bottom: 24px;
-    width: 2px;
-    background: linear-gradient(
-        to bottom,
-        var(--accent-subtle),
-        var(--accent),
-        var(--navy)
-    );
-}
-
-.spectrum-level {
-    display: grid;
-    grid-template-columns: 24px 1fr;
-    gap: var(--space-lg);
-    padding: var(--space-lg) 0;
-    position: relative;
-}
-
-.spectrum-level:first-child {
-    padding-top: 0;
-}
-
-.spectrum-level:last-child {
-    padding-bottom: 0;
-}
-
-.spectrum-marker {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 3px solid var(--accent);
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-}
-
-/* Intensity progression */
-.spectrum-level:nth-child(1) .spectrum-marker {
-    border-color: #a3c4e8;
-}
-
-.spectrum-level:nth-child(2) .spectrum-marker {
-    border-color: var(--accent);
-}
-
-.spectrum-level:nth-child(3) .spectrum-marker {
-    border-color: #3d6a9f;
-}
-
-.spectrum-level:nth-child(4) .spectrum-marker {
-    border-color: var(--navy);
-    background: var(--navy);
-}
-
-.spectrum-content h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: var(--space-sm);
-}
-
-.spectrum-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.spectrum-items li {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-xs);
-    padding-left: 0;
-}
-
-.spectrum-items .highlight {
-    color: var(--text);
-    font-weight: 500;
-}
-
-.spectrum-items .stat {
-    color: var(--navy);
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   Work Samples
-   ========================================================================== */
 
 .samples-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-md);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.samples-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.samples-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.samples-fade-right {
+    right: 0;
+    background: linear-gradient(to left, var(--bg), transparent);
 }
 
 .sample-card {
     display: block;
+    flex: 0 0 240px;
     background: white;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
@@ -443,6 +305,7 @@ strong {
     text-decoration: none;
     color: inherit;
     transition: all 200ms ease;
+    scroll-snap-align: start;
 }
 
 .sample-card:hover {
@@ -480,41 +343,166 @@ strong {
     margin: 0;
 }
 
+/* Campaign Work Section */
+.campaign-section {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border);
+}
+
+.campaign-section h3 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.campaign-grid {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.campaign-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.campaign-card {
+    flex: 0 0 180px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 200ms ease;
+}
+
+.campaign-card:hover {
+    transform: translateY(-2px);
+}
+
+.campaign-card:hover .campaign-image {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.campaign-image {
+    aspect-ratio: 8.5 / 11;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    background: white;
+    transition: all 200ms ease;
+}
+
+.campaign-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.campaign-info {
+    margin-top: var(--space-sm);
+}
+
+.campaign-info h4 {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text);
+}
+
+.campaign-info p {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
 /* ==========================================================================
    Background — Compressed credentials
    ========================================================================== */
 
-.background-compact {
+.section-tight {
+    padding-top: var(--space-lg);
+}
+
+.background-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2xl);
+    align-items: start;
 }
 
-.background-column h3 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    margin-bottom: var(--space-md);
-    padding-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--border);
+.background-text h2 {
+    margin-bottom: var(--space-lg);
 }
 
-.background-column ul {
+.background-list {
     list-style: none;
     padding: 0;
+    margin: 0;
+    max-width: 600px;
 }
 
-.background-column li {
+.background-list li {
     font-size: 0.9375rem;
     color: var(--text-secondary);
     margin-bottom: var(--space-sm);
+    padding-left: var(--space-lg);
+    position: relative;
 }
 
-.background-column li strong {
+.background-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+/* Resume card in background section */
+.resume-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
     color: var(--text);
-    display: block;
+    transition: all 200ms ease;
+}
+
+.resume-card:hover {
+    color: var(--accent);
+}
+
+.resume-card:hover .resume-image {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.resume-image {
+    width: 180px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 200ms ease;
+}
+
+.resume-image img {
+    width: 100%;
+    height: auto;
+}
+
+.resume-label {
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* ==========================================================================
@@ -522,20 +510,13 @@ strong {
    ========================================================================== */
 
 .footer {
-    padding: var(--space-4xl) 0 var(--space-xl);
+    padding: var(--space-xl) 0 var(--space-lg);
     background: var(--navy);
     color: white;
 }
 
 .footer h2 {
     color: white;
-}
-
-.contact-intro {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 560px;
-    margin-bottom: var(--space-xl);
 }
 
 .contact-info {
@@ -570,8 +551,8 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-md);
     transition: all 150ms ease;
 }
@@ -589,7 +570,7 @@ strong {
 
 .location {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
 }
 
@@ -626,30 +607,18 @@ strong {
         justify-content: center;
     }
 
-    .featured-stats {
-        flex-wrap: wrap;
-        gap: var(--space-xl);
-    }
-
-    .featured-stat-value {
-        font-size: 2.5rem;
-    }
-
-    .featured-title {
-        font-size: 2rem;
-    }
-
-    .featured-arc {
-        font-size: 1.125rem;
-    }
-
-    .samples-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .background-compact {
+    .background-layout {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
+    }
+
+    .resume-card {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .resume-image {
+        width: 140px;
     }
 }
 
@@ -677,44 +646,12 @@ strong {
         font-size: 1.125rem;
     }
 
-    .featured-case {
-        padding: var(--space-2xl) 0;
+    .sample-card {
+        flex: 0 0 200px;
     }
 
-    .featured-stat-value {
-        font-size: 2rem;
-    }
-
-    .featured-arc {
-        font-size: 1rem;
-    }
-
-    .featured-arc span {
-        display: block;
-        margin: var(--space-xs) 0;
-    }
-
-    .spectrum-levels::before {
-        display: none;
-    }
-
-    .spectrum-level {
-        grid-template-columns: 1fr;
-        gap: var(--space-sm);
-        padding: var(--space-md);
-        background: var(--bg-alt);
-        border-radius: var(--radius-lg);
-        margin-bottom: var(--space-md);
-    }
-
-    .spectrum-marker {
-        display: none;
-    }
-
-    .samples-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        margin: 0 auto;
+    .samples-fade {
+        width: 40px;
     }
 
     .contact-email {
